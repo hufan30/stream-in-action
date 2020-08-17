@@ -33,6 +33,7 @@ public class Problem1 {
     // 编写一个方法，筛选出年龄大于等于60的用户，然后将他们按照年龄从大到小排序，将他们的名字放在一个LinkedList中返回
     public static LinkedList<String> collectNames(List<User> users) {
         return users.stream().filter(x -> x.age >= 60).sorted(Comparator.comparing(User::getAge).reversed()).map(user -> user.name).collect(Collectors.toCollection(LinkedList::new));
+//        return (LinkedList<String>) users.stream().filter(x -> x.age >= 60).sorted(Comparator.comparing(User::getAge).reversed()).map(user -> user.name).collect(Collectors.toList());
     }
 
     public static void main(String[] args) {
